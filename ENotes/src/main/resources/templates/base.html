@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:fragment="layout(content)" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+	integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link
+	href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+	rel="stylesheet">
+</head>
+<body>
+
+	<header class="text-gray-600 body-font">
+		<div
+			class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+			<a
+				class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+				<!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+					stroke="currentColor" stroke-linecap="round"
+					stroke-linejoin="round" stroke-width="2"
+					class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+					viewBox="0 0 24 24"> --> <path
+					d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+				</svg> <span class="ml-3 text-5xl"><i class="fa-solid fa-book"></i>
+					ENotes</span>
+			</a>
+			<nav
+				class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+				<a class="mr-5 hover:text-gray-900" href="/">Home</a> <a
+					class="mr-5 hover:text-gray-900" href="/">About</a> <a
+					class="mr-5 hover:text-gray-900" href="#footer">Contact</a>
+			</nav>
+
+			<th:block th:if="${user==NULL}">
+				<form action="/login">
+					<button
+						class="inline-flex items-center text-white bg-blue-500 border-0 py-1 px-3 mr-2 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 rounded text-base mt-4 md:mt-0">
+						Login
+						<svg fill="none" stroke="currentColor" stroke-linecap="round"
+							stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1"
+							viewBox="0 0 24 24">
+        		<path d="M5 12h14M12 5l7 7-7 7"></path>
+      			</svg>
+					</button>
+				</form>
+				<form action="/register">
+					<button
+						class="inline-flex items-center text-white bg-blue-500 border-0 py-1 px-3 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 rounded text-base mt-4 md:mt-0">
+						Register
+						<svg fill="none" stroke="currentColor" stroke-linecap="round"
+							stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1"
+							viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+					</button>
+				</form>
+			</th:block>
+
+			<th:block th:unless="${user==NULL}">
+				<form action="/user/addNotes">
+					<button
+						class="inline-flex items-center text-white bg-blue-500 border-0 py-1 px-3 mr-2 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 rounded text-base mt-4 md:mt-0">
+						Add Notes
+						<svg fill="none" stroke="currentColor" stroke-linecap="round"
+							stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1"
+							viewBox="0 0 24 24">
+        		<path d="M5 12h14M12 5l7 7-7 7"></path>
+      			</svg>
+					</button>
+				</form>
+				<form action="/user/viewNotes">
+					<button
+						class="inline-flex items-center text-white bg-blue-500 border-0 py-1 px-3 mr-2 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 rounded text-base mt-4 md:mt-0">
+						View Notes
+						<svg fill="none" stroke="currentColor" stroke-linecap="round"
+							stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1"
+							viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+					</button>
+				</form>
+				<form action="profile">
+					<button
+						class="inline-flex items-center text-white bg-blue-500 border-0 py-1 px-3 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 rounded text-base mt-4 md:mt-0">
+						Profile
+						<svg fill="none" stroke="currentColor" stroke-linecap="round"
+							stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1"
+							viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+					</button>
+				</form>
+			</th:block> 
+		</div>
+	</header>
+
+	<section th:replace="${content}"></section>
+
+
+
+	<footer class="text-gray-600 body-font" id="footer">
+		<div
+			class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+			<a
+				class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+
+				<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+				</svg> <span class="ml-3 text-2xl"><i class="fa-solid fa-book"></i>
+					ENotes</span>
+			</a>
+			<p
+				class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+				© 2024 ENotes — <a href="https://twitter.com/knyttneve"
+					class="text-gray-600 ml-1" rel="noopener noreferrer"
+					target="_blank">harshaljambhale16@gmail.com</a>
+			</p>
+			<span
+				class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+				<a class="text-gray-500"
+				href="https://www.facebook.com/share/QnWDrYp4Q1sazg3x/?mibextid=qi2Omg">
+					<svg fill="currentColor" stroke-linecap="round"
+						stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+						viewBox="0 0 24 24">
+          <path
+							d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+        </svg>
+			</a> <a class="ml-3 text-gray-500"
+				href="https://x.com/HarshalJam72238?s=09"> <svg
+						fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
+						stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path
+							d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+        </svg>
+			</a> <a class="ml-3 text-gray-500"
+				href="https://www.instagram.com/_harshal_139?igsh=bm1mcGZmbHpzcnlu">
+					<svg fill="none" stroke="currentColor" stroke-linecap="round"
+						stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+						viewBox="0 0 24 24">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path
+							d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+        </svg>
+			</a> <a class="ml-3 text-gray-500"
+				href="https://www.linkedin.com/in/harshal-jambhale-3a569027b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+					<svg fill="currentColor" stroke="currentColor"
+						stroke-linecap="round" stroke-linejoin="round" stroke-width="0"
+						class="w-5 h-5" viewBox="0 0 24 24">
+          <path stroke="none"
+							d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+          <circle cx="4" cy="4" r="2" stroke="none"></circle>
+        </svg>
+			</a>
+			</span>
+		</div>
+	</footer>
+
+
+</body>
+</html>
