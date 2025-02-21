@@ -19,7 +19,7 @@ Ex :- Arrays, ArrayList, HashMap, Class, Interface etc.
 
 ![Alt text](datatypes.png)
 <br/>
-![Alt text](datatypes_size.png)
+![Alt text](datatype_size.png)
 
 ### **Enum**  
 Enums are used to define a set of named constants, providing a way to represent a fixed set of values.
