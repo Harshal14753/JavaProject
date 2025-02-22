@@ -147,7 +147,7 @@ Ans :- b (syntax error)
 ```
 
 > [!TIP]
->Enum cannot have any modifiers. They are public, static and final by default.
+>Enum cannot use any modifiers before the values. They are public, static and final by default.
 
 > [!TIP]
 > Syntax wrong means compilation error 
