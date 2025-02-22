@@ -334,6 +334,9 @@ Answer : Compilation Error
 Explanation: The code does not compile because the method calculate() in class A is final and so cannot be overridden by method of class b.
 ```
 
+> [!NOTE]
+> Final method cannot be overridden
+
 ## Arrays
 
 int[] arr = new arr[2]; <br>
