@@ -358,7 +358,7 @@ Arrays.sort(numbers, 1, 4);      // Sorts elements from index 1 to 3
 ```
 
 > [!NOTE]
-> The **Arrays.sort()** method in Java uses **Dual-Pivot Quicksort** for sorting **primitive arrays** (e.g., int[], double[]) and **TimSort** for sorting **object arrays** (e.g., String[], Integer[]).
+> The **Arrays.sort()** method in Java uses **Dual-Pivot Quicksort** for sorting **primitive arrays** (e.g., int[], double[]) (worst time c. -> O(n^2)) and <br/> **TimSort** for sorting **object arrays** (e.g., String[], Integer[]) (worst time c. -> O(n log n) ) .
 
 3. Fill an Array (fill())
 ```
