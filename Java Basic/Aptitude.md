@@ -22,7 +22,8 @@ Ex :- Arrays, ArrayList, HashMap, Class, Interface etc.
 > [!NOTE]
 > Formula of calculate the range by using the size.<br/>
  -2^(8-1) to 2^(8-1)-1
-<br/>
+
+
 ![Alt text](datatype_size.png)
 
 
