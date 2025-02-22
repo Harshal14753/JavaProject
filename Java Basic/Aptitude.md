@@ -1,6 +1,6 @@
 # History
 Java is an Object-Oriented programming language developed by James Gosling in the early 1991.
-The language was originally called Oak, but was later renamed to Java
+The language was originally called Oak, but was later renamed to Java in 1994 and in 1994 it is publiched
 <br/>
 <br/>
 
