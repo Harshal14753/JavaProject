@@ -254,3 +254,176 @@ d) none of the mentioned
 Answer: b
 Explanation: Keywords are specially reserved words which can not be used for naming a user defined variable, example: class, int, for etc.
 ```
+
+## Type Conversion and Casting
+
+```
+4. If an expression contains double, int, float, long, then the whole expression will be promoted into which of these data types?
+a) long
+b) int
+c) double
+d) float
+
+Answer: c
+Explanation: If any operand is double the result of an expression is double.
+```
+
+**Truncation** -> Truncate means to trim some digits of a floating type number or a double type number from right. We can also truncate the decimal portion completely making it an integer type number.
+
+> [!NOTE]
+>  Operator ++ increments the value of character by 1.
+
+### Q
+What will be the output of the following Java code?
+
+```
+class conversion 
+{
+    public static void main(String args[]) 
+    {
+        double a = 295.04;
+        int  b = 300;
+        byte c = (byte) a;
+        byte d = (byte) b;
+        System.out.println(c + " "  + d);
+    } 
+}
+
+a) 38 43
+b) 39 44
+c) 295 300
+d) 295.04 300
+
+Answer: b
+Explanation: Type casting a larger variable into a smaller variable results in modulo of larger variable by range of smaller variable. b contains 300 which is larger than byte’s range i:e -128 to 127 hence d contains 300 modulo 256 i:e 44.
+output:
+
+```
+
+What will be the output of the following Java code?
+```
+class A 
+{
+    final public int calculate(int a, int b) { return 1; } 
+} 
+
+class B extends A 
+{ 
+    public int calculate(int a, int b) { return 2; } 
+} 
+
+public class output 
+{
+    public static void main(String args[]) 
+    { 
+        B object = new B(); 
+        System.out.print("b is " + b.calculate(0, 1));  
+    } 
+}
+
+
+Answer : Compilation Error
+Explanation: The code does not compile because the method calculate() in class A is final and so cannot be overridden by method of class b.
+```
+
+## Arrays
+
+int[] arr = new arr[2]; <br>
+2 is the size of the array
+
+### Arrays method
+
+1. Convert Array to String (**toString()**)
+```
+int[] numbers = {1, 2, 3, 4, 5};
+System.out.println(Arrays.toString(numbers)); 
+// Output: [1, 2, 3, 4, 5]
+```
+2. Sort an Array (**sort()**)
+```
+int[] numbers = {5, 3, 8, 1, 2};
+Arrays.sort(numbers);
+Arrays.sort(numbers, 1, 4);      // Sorts elements from index 1 to 3
+```
+
+> [!NOTE]
+> The **Arrays.sort()** method in Java uses **Dual-Pivot Quicksort** for sorting **primitive arrays** (e.g., int[], double[]) and **TimSort** for sorting **object arrays** (e.g., String[], Integer[]).
+
+3. Fill an Array (fill())
+```
+int[] numbers = new int[5];
+Arrays.fill(numbers, 10);             // Output: [10, 10, 10, 10, 10]
+Arrays.fill(numbers, 1, 4, 20);       // Output: [10, 20, 20, 20, 10]
+```
+
+4. Copy an Array (copyOf(), copyOfRange())
+```
+int[] numbers = {1, 2, 3, 4, 5};
+int[] copiedArray = Arrays.copyOf(numbers, numbers.length);       // Output: [1, 2, 3, 4, 5]
+int[] subArray = Arrays.copyOfRange(numbers, 1, 4);               // Output: [2, 3, 4]
+```
+
+5. Compare Two Arrays (equals())
+```
+int[] arr1 = {1, 2, 3};
+int[] arr2 = {1, 2, 3};
+System.out.println(Arrays.equals(arr1, arr2));    // true
+```
+
+
+6. Search in an Array (binarySearch())
+```
+int[] numbers = {1, 2, 3, 4, 5};
+int index = Arrays.binarySearch(numbers, 3);
+```
+
+7. Convert an Array to a List (asList())
+```
+String[] fruits = {"Apple", "Banana", "Cherry"};
+List<String> fruitList = Arrays.asList(fruits);
+```
+
+8. Create a Parallel Sorted Array (parallelSort())
+
+Introduced in Java 8 uses a combination of Merge Sort and Fork/Join parallelism.<br>
+Works by dividing the array into subarrays, sorting them in parallel threads, and then merging the results. <br>
+Faster than Arrays.sort() for large datasets (typically above 10,000 elements). <br>
+**Time Complexity**: O(n log n)
+
+
+What will be the output of the following Java code?
+```
+    int arr[] = new int [5];
+    System.out.print(arr);
+```
+
+Answer: d <br>
+Explanation: If we trying to print any reference variable internally, toString() will be called which is implemented to return the String in following form:
+classname@hashcode in hexadecimal form.
+
+What will be the output of the following Java code?
+```
+    class array_output 
+    {
+        public static void main(String args[]) 
+        {
+            int array_variable [] = new int[10];
+        for (int i = 0; i < 10; ++i) 
+            {
+                array_variable[i] = i;
+                System.out.print(array_variable[i] + " ");
+                i++;
+            }
+        } 
+    }
+
+    a) 0 2 4 6 8
+    b) 1 3 5 7 9
+    c) 0 1 2 3 4 5 6 7 8 9
+    d) 1 2 3 4 5 6 7 8 9 10
+
+
+    Answer: a
+```
+
+
