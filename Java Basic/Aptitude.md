@@ -111,7 +111,7 @@ The **ASCII** (American Standard Code for Information Interchange) values for up
 Enums are used to define a set of named constants, providing a way to represent a fixed set of values.
 
 ```
-Can we create an instance of Enum outside of Enum itself?
+Can we create an instance of Enum inside the Enum itself?
 a) True
 b) False
 Ans :- False
