@@ -406,6 +406,11 @@ What will be the output of the following Java code?
 ```
     int arr[] = new int [5];
     System.out.print(arr);
+
+	a) 0
+	b) value stored in arr[0]
+	c) 00000
+	d) Class name@ hashcode in hexadecimal form
 ```
 
 Answer: d <br>
