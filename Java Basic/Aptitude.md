@@ -443,3 +443,114 @@ What will be the output of the following Java code?
 ```
 
 
+
+# Operators and Control Statements
+## Arithmetic Operators
+
+With x = 0, which of the following are legal lines of Java code for changing the value of x to 1?
+```
+    1. x++;
+    2. x = x + 1;
+    3. x += 1;
+    4. x =+ 1;   
+```
+Answer : All are legal <br>
+Explanation: Operator ++ increases value of variable by 1. x = x + 1 can also be written in shorthand form as x += 1. Also x =+ 1 will set the value of x to 1.
+
+```
+Can 8 byte long data type be automatically type cast to 4 byte float data type?
+a) True
+b) False
+
+Answer: a
+Explanation: Both data types have different memory representation that’s why 8-byte integral data type can be stored to 4-byte floating point data type.
+```
+
+## Bitwise Operators
+
+![Alt text](Bitwise_Operator.jpg)
+
+Example of bitwise **left shift operator** 
+```
+public class BitwiseShift {
+    public static void main(String[] args) {
+        int num = 5; // Binary: 0000 0101
+        int result = num << 2; // Shift left by 2 positions
+        
+        System.out.println("5 << 2 = " + result); 
+        // 0001 0100 (binary) = 20 (decimal)
+    }
+}
+
+Explanation :
+5 in binary: 0000 0101
+Left shift (<< 2): 0001 0100 (20 in decimal)
+```
+> [!NOTE]
+> Formmula for left shift : **x << n  →  x * (2ⁿ)**
+
+
+Example of bitwise **right shift operator**
+
+```
+public class BitwiseShift {
+    public static void main(String[] args) {
+        int num = 20; // Binary: 0001 0100
+        int result = num >> 2; // Shift right by 2 positions
+        
+        System.out.println("20 >> 2 = " + result); 
+        // 0000 0101 (binary) = 5 (decimal)
+    }
+}
+
+Explanation:
+20 in binary: 0001 0100
+Right shift (>> 2): 0000 0101 (5 in decimal)
+
+
+But For Negative number 
+-20 in binary (two's complement): 1110 1100
+-20 >> 2: 1111 1011 (which is -5 in decimal).
+```
+
+> [!NOTE]
+> The **right shift operator** automatically fills the higher order bit with its previous contents each time a shift occurs. This also preserves the sign of the value.
+
+> [!NOTE]
+> Formmula for left shift : **x >> n  →  x / (2ⁿ)**
+
+## Relational Operators and Boolean Logic Operators
+
+Difference between the | and || or & and && operators in Java?
+-> The `|` and `||` operators are used for bitwise OR operations, while the `&` and `&&` operators are used for logical AND operations. <br>
+The main difference between them is that the `|` and `&` operators perform
+bitwise operations on the operands, whereas the `||` and `&&` operators
+perform logical operations. <br>
+The `|` and `||` operators return 1 if any of the bits in the operands
+are 1, whereas the `&` and `&&` operators return 0 if any of
+the bits in the operands are 0.
+
+## Operators and Operator Precedence
+
+![Alt text](Operator_Precedence.png)
+
+### Switch
+```
+    switch(expression) {
+    case x:
+        // code block
+        break;
+    case y:
+        // code block
+        break;
+    default:
+        // code block
+    }
+```
+
+> [!NOTE]
+> Continue, break and return are jump statements.
+
+
+## Java Environment & OOPS Concepts
+
