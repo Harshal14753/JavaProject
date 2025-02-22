@@ -174,9 +174,10 @@ public class MainClass
 Ans :- 10 10 10
 ```
 
+**getEnumConstants()** returns the elements of this enum class or null if this Class object does not represent an enum type.
+
 ## BigDecimal
 
-**getEnumConstants()** returns the elements of this enum class or null if this Class object does not represent an enum type.
 
 BigDecimal has unnatural syntax, needs more memory and creates a great amount of garbage. But it has a high precision which is useful for some calculations like money.
 
