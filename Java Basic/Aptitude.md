@@ -110,6 +110,8 @@ The **ASCII** (American Standard Code for Information Interchange) values for up
 ## Enum
 Enums are used to define a set of named constants, providing a way to represent a fixed set of values.
 
+![Alt text](Enum_Method.png)
+
 ```
 Can we create an instance of Enum inside the Enum itself?
 a) True
