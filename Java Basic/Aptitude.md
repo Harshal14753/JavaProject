@@ -47,7 +47,7 @@ public class Solution{
 ## Q1
 ![Alt text](Q1.png)
  
-Answer :- 
+Answer :- d <br/>
 Explanation: Statements (1), (2), (3), and (4) are correct. (1) is correct because when a floating-point number (a double in this case) is cast to an int, it simply loses the digits after the decimal. (2) and (4) are correct because a long can be cast into a byte. If the long is over 127, it loses its precision due to narrowing of the conversion. (3) actually works, even though a cast is not necessary, because a long can store a byte.
 
 
